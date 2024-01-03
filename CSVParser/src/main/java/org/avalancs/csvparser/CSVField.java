@@ -1,3 +1,5 @@
 package org.avalancs.csvparser;
 
-public record CSVField(String name, FieldType fieldType, String description, boolean mandatory) {}
+import org.avalancs.csvparser.fieldtypes.FieldType;
+
+public record CSVField(String name, String description, FieldType fieldType, boolean mandatory) {}
