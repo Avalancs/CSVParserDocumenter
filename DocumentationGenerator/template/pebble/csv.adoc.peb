@@ -1,0 +1,13 @@
+== {{ csvName }}
+
+=== Overview
+{{ overview }}
+
+=== File format
+.{{ csvName }}
+|===
+|Column|Description|Mandatory
+{% for field in fields %}
+|{{ field.name | upper }}|{{ field.description }}|{{ field.mandatory }}
+{% endfor %}
+|===
