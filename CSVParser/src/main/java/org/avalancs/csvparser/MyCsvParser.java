@@ -41,7 +41,7 @@ public abstract class MyCsvParser {
             .setTrim(true) // TODO: should we use this?
             .setHeader(fields.stream().map(CSVField::name).toList().toArray(new String[0]))
             .setSkipHeaderRecord(true) // do not return the first row with the headers
-            .build();
+            .get();
     }
 
     /** The name of the CSV (the chapter name inside the documentation) */
@@ -58,7 +58,7 @@ public abstract class MyCsvParser {
     }
 
     public CSVParser getParser(Reader reader) throws IOException {
-        return new CSVParser(reader, csvFormat);
+        return CSVParser.builder().setFormat(csvFormat).setReader(reader).get();
     }
 
     public void streamRead(Path file, Consumer<Map<String, Object>> function) throws IOException {

@@ -5,13 +5,16 @@ include("CSVParser", "DocumentationGenerator")
 dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
-            version("junit", "5.10.0")
+            version("junit", "6.0.3")
 
-            library("junit-bom", "org.junit", "junit-bom").versionRef("junit")
             library("junit-jupiter", "org.junit.jupiter", "junit-jupiter").versionRef("junit")
-            library("commons-csv", "org.apache.commons:commons-csv:1.10.0")
-            library("lombok", "org.projectlombok:lombok:1.18.30")
-            library("logback", "ch.qos.logback:logback-classic:1.3.5")
+            library("junit5", "org.junit.jupiter", "junit-jupiter").versionRef("junit")
+            library("junit5-params", "org.junit.jupiter", "junit-jupiter-params").versionRef("junit")
+            library("junit5-engine", "org.junit.jupiter", "junit-jupiter-engine").versionRef("junit")
+            library("junit5-platform", "org.junit.platform", "junit-platform-launcher").versionRef("junit")
+            library("commons-csv", "org.apache.commons:commons-csv:1.14.1")
+            library("lombok", "org.projectlombok:lombok:1.18.44")
+            library("logback", "ch.qos.logback:logback-classic:1.5.32")
 
             //bundle("junit", listOf("junit-bom", "junit-jupiter"))
         }

@@ -11,7 +11,7 @@ public class FieldTypes {
     public static final FieldType NUMBER = new FieldType("Number") {
         @Override
         public Object parse(String col) {
-            return Integer.parseInt(col);
+            return Double.parseDouble(col);
         }
     };
 
